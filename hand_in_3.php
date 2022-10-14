@@ -20,7 +20,7 @@ session_start();
 
     $loginStatus = false;
 
-    $validateLogin = file("logininfo.txt");
+    $validateLogin = file("loginfo.txt");
 
     function checkExistingLogin($validateLogin, $savedUsername, $savedPassword)
     {
@@ -38,19 +38,19 @@ session_start();
         }
     }
 
-    $_SESSION["validateToken"] = false;
+    $_SESSION["validate"] = false;
 
-    $loginStatus = checkExistingLogin($validateLogin, $_POST["username"], $_POST["password"]);
+    $loginStatus = checkExistingLogin($validateLogin, $_POST["uname"], $_POST["psw"]);
 
     if ($loginStatus == true) {
 
-        $_SESSION["username"] = $_POST["username"];
-        $_SESSION["validateToken"] = true;
+        $_SESSION["uname"] = $_POST["uname"];
+        $_SESSION["validate"] = true;
         echo '
     <form action="upload.php" method="post" enctype="multipart/form-data">
-    Välj en fil att ladda upp:
+    Choose a file to upload:
     <input type="file" name="fileToUpload" id="fileToUpload" />
-    <input type="submit" value="Ladda upp" name="submit" />
+    <input type="submit" value="Upload" name="submit" />
   </form>';
     }
 

@@ -17,7 +17,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $validateLogin = fopen("logininfo.txt", "a+") or die("Unable to open file!");
+    $validateLogin = fopen("loginfo.txt", "a+") or die("Unable to open file!");
     fwrite($validateLogin, $username . ";" . $password . "\n");
     fclose($validateLogin);
 
