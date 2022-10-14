@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+}
+
+input {
+    padding: 12px 20px;
+    width: 30vw;
+}
+
+h1{
+    color: white;
+}
